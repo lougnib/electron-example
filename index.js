@@ -8,13 +8,10 @@ const debug = require('electron-debug');
 const contextMenu = require('electron-context-menu');
 const config = require('./config');
 const menu = require('./menu');
-const packageJson = require('./package.json');
 
 unhandled();
 debug();
 contextMenu();
-
-//app.setAppUserModelId(packageJson.build.appId);
 
 // Uncomment this before publishing your first version.
 // It's commented out as it throws an error if there are no published versions.
@@ -86,5 +83,5 @@ app.on('activate', () => {
 	mainWindow = await createMainWindow();
 
 	const favoriteAnimal = config.get('favoriteAnimal');
-	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Electron 基于 Chromium 和 Node.js, 让你可以使用 HTML, CSS 和 JavaScript 构建跨平台的桌面应用程序。'`);
+	mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Electron 基于 Chromium 和 Node.js, 让你可以使用 HTML, CSS 和 JavaScript 构建跨平台的桌面应用程序。${favoriteAnimal}'`);
 })();
