@@ -46,9 +46,6 @@
 	},
 	"build": {
 		"appId": "com.lougnib.electron.example",
-		"electronDownload": {
-			"mirror": "https://npm.taobao.org/mirrors/electron/"
-		},
 		"mac": {
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true
